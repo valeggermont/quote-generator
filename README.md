@@ -8,7 +8,7 @@ Run the following command :
 
 ```
 npm install
-´``
+```
 
 Create a `.env` file based on ´env.example` :
 
