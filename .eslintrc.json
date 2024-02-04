@@ -1,0 +1,46 @@
+{
+    "extends": [
+        "eslint:recommended", 
+        "plugin:@typescript-eslint/recommended", 
+        "plugin:import/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "root": true,
+    "rules": {
+        "semi": ["error","never"],
+        "@typescript-eslint/member-delimiter-style": ["error", {
+            "multiline": {
+                "delimiter": "none"
+            },
+            "singleline": {
+                "delimiter": "comma",
+                "requireLast": false
+            }
+        }],
+        "quotes": ["error", "single"],
+        "import/order": [
+            "warn",
+            {
+                "alphabetize": {
+                    "order": "asc"
+                },
+                "groups": ["builtin", "external", "parent", "internal"],
+                "newlines-between": "always",
+                "pathGroups": [
+                    {
+                        "group": "parent",
+                        "pattern": "../**"
+                    },
+                    {
+                        "group": "internal",
+                        "pattern": "./**"
+                    }
+                ]
+            }
+        ]
+    }
+}
